@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="format-detection" content="telephone=no">
+   <link rel="stylesheet" href="css/style.min.css">
+   <title>Оформление заказа</title>
+</head>
+
+<body>
+   <div class="wrapper cart-wrapper">
+      <header class="order-header">
+   <div class="container">
+      <div class="order-header__wrapper">
+         <a href="#" class="order-header__logo">
+            <img src="img/logo.svg" alt="">
+         </a>
+         <a href="#" class="order-header__link">Продолжить покупки</a>
+      </div>
+   </div>
+</header>
+      <main class="main cart-main">
+         <section class="order-content">
+            <div class="container">
+               <div class="order-content__wrapper">
+                  <div class="order-content__left">
+                     <div class="order-content__header">
+                        <a href="#">Войдите в свой аккаунт</a> и мы заполним форму по сохраненным данным. Если аккаунта
+                        нет, мы создадим
+                        его автоматически после оформления заказа.
+                     </div>
+                     <div class="order-content__main">
+                        <div class="order-content__user order-content__block">
+                           <h2 class="order-content__subtitle">Личные данные</h2>
+                           <ul class="order-content__inputs">
+                              <li class="project-input">
+                                 <input type="text" placeholder="Имя">
+                              </li>
+                              <li class="project-input">
+                                 <input type="text" placeholder="Фамилия">
+                              </li>
+                              <li class="project-input">
+                                 <input type="text" placeholder="+ _ (___) ___ - __ - __" data-phone>
+                              </li>
+                              <li class="project-input">
+                                 <input type="text" placeholder="Электронная почта">
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="order-content__delivery order-content__block">
+                           <h2 class="order-content__subtitle">Способ доставки</h2>
+                           <div id="orderCitySelect"></div>
+                           <ul class="order-content__deliveries">
+                              <li>
+                                 <input type="radio" name="orderDelivery" value="samovivoz" id="orderDelivery0">
+                                 <label for="orderDelivery0" class="delivery-card">
+                                    <div class="delivery-card__image">
+                                       <img src="img/delivery1.png" alt="">
+                                    </div>
+                                    <h4 class="delivery-card__title">Самовывоз из магазина</h4>
+                                    <div class="delivery-card__price">
+                                       <img src="img/icons/delivery-price.svg" alt="">
+                                       <span>Бесплатно</span>
+                                    </div>
+                                 </label>
+                              </li>
+                              <li>
+                                 <input type="radio" name="orderDelivery" value="cdek" id="orderDelivery1">
+                                 <label for="orderDelivery1" class="delivery-card">
+                                    <div class="delivery-card__image">
+                                       <img src="img/delivery2.png" alt="">
+                                    </div>
+                                    <h4 class="delivery-card__title">СДЭК (Пункт выдачи)</h4>
+                                    <div class="delivery-card__price">
+                                       <img src="img/icons/delivery-price.svg" alt="">
+                                       <span>от 160 Р</span>
+                                    </div>
+                                 </label>
+                              </li>
+                              <li>
+                                 <input type="radio" name="orderDelivery" value="yandex" id="orderDelivery2">
+                                 <label for="orderDelivery2" class="delivery-card">
+                                    <div class="delivery-card__image">
+                                       <img src="img/delivery3.png" alt="">
+                                    </div>
+                                    <h4 class="delivery-card__title">Яндекс Доставка (Пункт выдачи)</h4>
+                                    <div class="delivery-card__price">
+                                       <img src="img/icons/delivery-price.svg" alt="">
+                                       <span>от 160 Р</span>
+                                    </div>
+                                 </label>
+                              </li>
+                              <li>
+                                 <input type="radio" name="orderDelivery" value="cdek2" id="orderDelivery3">
+                                 <label for="orderDelivery3" class="delivery-card">
+                                    <div class="delivery-card__image">
+                                       <img src="img/delivery4.png" alt="">
+                                    </div>
+                                    <h4 class="delivery-card__title">Доставка курьером (СДЭК)</h4>
+                                    <div class="delivery-card__price">
+                                       <img src="img/icons/delivery-price.svg" alt="">
+                                       <span>от 160 Р</span>
+                                    </div>
+                                 </label>
+                              </li>
+                           </ul>
+                           <div class="order-deliveries__content" data-delivery-for="samovivoz">
+                              <div class="order-deliveries__sam">
+                                 <h4>Выберите магазин</h4>
+                                 <ul class="order-content__radios">
+                                    <li>
+                                       <input type="radio" name="orderPaymentDelivery" id="orderPaymentDelivery0"
+                                          value="0">
+                                       <label for="orderPaymentDelivery0">
+                                          <div></div>
+                                          <span>ТЦ «ЛАДЬЯ» г. Москва, Дубравная улица, д. 34/29</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="radio" name="orderPaymentDelivery" id="orderPaymentDelivery1"
+                                          value="1">
+                                       <label for="orderPaymentDelivery1">
+                                          <div></div>
+                                          <span>ДЦ «ОРДЖОНИКИДЗЕ», г. Москва, ул. Орджоникидзе, 11, стр.1, 1 этаж</span>
+                                       </label>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <ul class="order-deliveries__price">
+                                 <li>
+                                    <div class="delivery-card__price ">
+                                       <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M4.16989 15.8L8.69989 20.33C10.5599 22.19 13.5799 22.19 15.4499 20.33L19.8399 15.94C21.6999 14.08 21.6999 11.06 19.8399 9.19005L15.2999 4.67005C14.3499 3.72005 13.0399 3.21005 11.6999 3.28005L6.69989 3.52005C4.69989 3.61005 3.10989 5.20005 3.00989 7.19005L2.76989 12.19C2.70989 13.54 3.21989 14.85 4.16989 15.8Z"
+                                             stroke="#737373" stroke-linecap="round" stroke-linejoin="round" />
+                                          <path
+                                             d="M9.5 12.5C10.8807 12.5 12 11.3807 12 10C12 8.61929 10.8807 7.5 9.5 7.5C8.11929 7.5 7 8.61929 7 10C7 11.3807 8.11929 12.5 9.5 12.5Z"
+                                             stroke="#737373" stroke-linecap="round" />
+                                       </svg>
+                                       <span>Бесплатно</span>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="order-deliveries__content" data-delivery-for="cdek">
+                              <a href="#cdekModal" class="modal__link cart-aside__btn">Выбрать пункт выдачи</a>
+                              <ul class="order-deliveries__price">
+                                 <li>
+                                    <div class="delivery-card__price">
+                                       <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M4.16989 15.8L8.69989 20.33C10.5599 22.19 13.5799 22.19 15.4499 20.33L19.8399 15.94C21.6999 14.08 21.6999 11.06 19.8399 9.19005L15.2999 4.67005C14.3499 3.72005 13.0399 3.21005 11.6999 3.28005L6.69989 3.52005C4.69989 3.61005 3.10989 5.20005 3.00989 7.19005L2.76989 12.19C2.70989 13.54 3.21989 14.85 4.16989 15.8Z"
+                                             stroke="#737373" stroke-linecap="round" stroke-linejoin="round" />
+                                          <path
+                                             d="M9.5 12.5C10.8807 12.5 12 11.3807 12 10C12 8.61929 10.8807 7.5 9.5 7.5C8.11929 7.5 7 8.61929 7 10C7 11.3807 8.11929 12.5 9.5 12.5Z"
+                                             stroke="#737373" stroke-linecap="round" />
+                                       </svg>
+
+                                       <span>240 Р</span>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="delivery-card__price">
+                                       <img src="img/icons/Clock.svg" alt="">
+                                       <span>1 - 3 рабочих дня</span>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="order-deliveries__content" data-delivery-for="yandex">
+                              <a href="#yandexModal" class="modal__link cart-aside__btn">Выбрать пункт выдачи</a>
+                              <ul class="order-deliveries__price">
+                                 <li>
+                                    <div class="delivery-card__price">
+                                       <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M4.16989 15.8L8.69989 20.33C10.5599 22.19 13.5799 22.19 15.4499 20.33L19.8399 15.94C21.6999 14.08 21.6999 11.06 19.8399 9.19005L15.2999 4.67005C14.3499 3.72005 13.0399 3.21005 11.6999 3.28005L6.69989 3.52005C4.69989 3.61005 3.10989 5.20005 3.00989 7.19005L2.76989 12.19C2.70989 13.54 3.21989 14.85 4.16989 15.8Z"
+                                             stroke="#737373" stroke-linecap="round" stroke-linejoin="round" />
+                                          <path
+                                             d="M9.5 12.5C10.8807 12.5 12 11.3807 12 10C12 8.61929 10.8807 7.5 9.5 7.5C8.11929 7.5 7 8.61929 7 10C7 11.3807 8.11929 12.5 9.5 12.5Z"
+                                             stroke="#737373" stroke-linecap="round" />
+                                       </svg>
+                                       <span>240 Р</span>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="delivery-card__price">
+                                       <img src="img/icons/Clock.svg" alt="">
+                                       <span>1 - 3 рабочих дня</span>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="order-deliveries__content" data-delivery-for="cdek2">
+                              <ul class="order-deliveries__form">
+                                 <li class="project-input fw">
+                                    <input type="text" placeholder="Улица">
+                                 </li>
+                                 <li class="project-input">
+                                    <input type="text" placeholder="Номер дома / строения">
+                                 </li>
+                                 <li class="project-input">
+                                    <input type="text" placeholder="Номер квартиры / офиса">
+                                 </li>
+                                 <li class="project-input fw">
+                                    <textarea name="" id="" placeholder="Комментарий курьеру"></textarea>
+                                 </li>
+                              </ul>
+                              <ul class="order-deliveries__price">
+                                 <li>
+                                    <div class="delivery-card__price">
+                                       <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M4.16989 15.8L8.69989 20.33C10.5599 22.19 13.5799 22.19 15.4499 20.33L19.8399 15.94C21.6999 14.08 21.6999 11.06 19.8399 9.19005L15.2999 4.67005C14.3499 3.72005 13.0399 3.21005 11.6999 3.28005L6.69989 3.52005C4.69989 3.61005 3.10989 5.20005 3.00989 7.19005L2.76989 12.19C2.70989 13.54 3.21989 14.85 4.16989 15.8Z"
+                                             stroke="#737373" stroke-linecap="round" stroke-linejoin="round" />
+                                          <path
+                                             d="M9.5 12.5C10.8807 12.5 12 11.3807 12 10C12 8.61929 10.8807 7.5 9.5 7.5C8.11929 7.5 7 8.61929 7 10C7 11.3807 8.11929 12.5 9.5 12.5Z"
+                                             stroke="#737373" stroke-linecap="round" />
+                                       </svg>
+                                       <span>240 Р</span>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="delivery-card__price">
+                                       <img src="img/icons/Clock.svg" alt="">
+                                       <span>1 - 3 рабочих дня</span>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="order-content__payment order-content__block">
+                           <h2 class="order-content__subtitle">Способ оплаты</h2>
+                           <ul class="order-content__radios">
+                              <li>
+                                 <input type="radio" name="orderPayment" id="orderPayment0" value="0">
+                                 <label for="orderPayment0">
+                                    <div></div>
+                                    <span>Оплатить сейчас</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <input type="radio" name="orderPayment" id="orderPayment1" value="1">
+                                 <label for="orderPayment1">
+                                    <div></div>
+                                    <span>Оплатить при получении (картой или наличными)</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <input type="radio" name="orderPayment" id="orderPayment2" value="2">
+                                 <label for="orderPayment2">
+                                    <div></div>
+                                    <span>Оплатить в кредит</span>
+                                 </label>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <aside class="cart-content__aside cart-aside">
+                     <div class="cart-aside__main">
+                        <div class="cart-aside__res">
+                           <span>Итого:</span>
+                           <span>30 960 Р</span>
+                        </div>
+                        <ul class="cart-aside__list">
+                           <li>
+                              <span>Итого:</span>
+                              <span>30 960 Р</span>
+                           </li>
+                           <li>
+                              <span>Доставка:</span>
+                              <span>160 Р Р</span>
+                           </li>
+                           <li>
+                              <span>Скидка:</span>
+                              <span style="color: rgba(137, 69, 58, 1);">-200 Р</span>
+                           </li>
+                        </ul>
+                        <div class="project-input">
+                           <input type="text" class="cart-aside__input" placeholder="Введите промокод">
+                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M15.0221 20.3026C15.1523 20.4327 15.3633 20.4327 15.4935 20.3026C15.6236 20.1724 15.6236 19.9614 15.4935 19.8313L7.67386 12.0116C7.54371 11.8815 7.33268 11.8815 7.20253 12.0116C7.07237 12.1418 7.07237 12.3528 7.20253 12.483L15.0221 20.3026ZM15.4956 3.7353C15.634 3.59688 15.634 3.37245 15.4956 3.23403C15.3572 3.09561 15.1328 3.09561 14.9943 3.23403L7.20466 11.0237C7.06624 11.1621 7.06624 11.3866 7.20466 11.525C7.34309 11.6634 7.56751 11.6634 7.70593 11.525L15.4956 3.7353Z"
+                                 fill="#B1A8A9" />
+                           </svg>
+                        </div>
+                     </div>
+                     <div class="cart-aside__footer">
+                        <button class="cart-aside__btn">Оформить заказ</button>
+                        <p>
+                           Нажимая на кнопку, вы подтверждаете своё согласие с <a href="#" target="_blank">Политикой
+                              конфиденциальности</a> и условиями
+                           <a href="#" target="_blank">Публичной оферты</a>
+                        </p>
+                     </div>
+                  </aside>
+               </div>
+            </div>
+         </section>
+         <div class="modal order-modal" id="yandexModal">
+            <div class="modal__content order-modal__content">
+               iframe yandex
+            </div>
+         </div>
+         <div class="modal order-modal" id="cdekModal">
+            <div class="modal__content order-modal__content">
+               iframe cdek
+            </div>
+         </div>
+      </main>
+      <footer></footer>
+   </div>
+   <script src="https://unpkg.com/imask"></script>
+   <script src="js/app.js"></script>
+</body>
+
+</html>
