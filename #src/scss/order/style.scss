@@ -353,6 +353,7 @@
       border: 1px solid rgba(177, 168, 169, 1);
       border-radius: 8px;
       transition: 0.3s;
+      background-color: white !important;
       &.placeholder {
          color: rgba(115, 115, 115, 1);
       }
@@ -367,6 +368,7 @@
       }
    }
    &__list {
+      padding-left: 0;
       background-color: white;
       display: flex;
       flex-direction: column;

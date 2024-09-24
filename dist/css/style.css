@@ -957,6 +957,7 @@ svg path {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  background-color: white !important;
 }
 
 .select__title.placeholder {
@@ -979,6 +980,7 @@ svg path {
 }
 
 .select__list {
+  padding-left: 0;
   background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;

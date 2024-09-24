@@ -2,7 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
    makeCartShutter();
    makeOrderTemplate();
 });
-
+function goBack() {
+   const back = document.querySelector(".cart-content__back");
+   if (!back) return;
+   back.addEventListener("click", (e) => {
+      e.preventDefault();
+      history.back();
+   });
+}
 function makeCartShutter() {
    const shutter = document.querySelector(".cart-shutter");
    const container = document.querySelector(".cart-content__items");
@@ -25,6 +32,7 @@ function makeCartShutter() {
 }
 
 function makeOrderTemplate() {
+   if (!document.querySelector("#orderCitySelect")) return;
    const citySelect = new Select("#orderCitySelect", {
       placeholder: "Введите город доставки",
       // selectedId: "volg",
