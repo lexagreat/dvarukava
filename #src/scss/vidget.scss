@@ -1,0 +1,105 @@
+.media-vidget {
+   position: fixed;
+   right: 32px;
+   bottom: 32px;
+   &.open {
+      .open {
+         display: none;
+      }
+      .close {
+         display: flex;
+      }
+      .media-vidget {
+         &__icon {
+            background-color: white;
+            box-shadow: 3px 3px 30px 0 rgba(59, 59, 59, 0.15);
+         }
+         &__list {
+            opacity: 1;
+            pointer-events: all;
+         }
+      }
+   }
+   .close {
+      display: none;
+      align-items: center;
+      justify-content: center;
+   }
+   .open {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   // .media-vidget__icon
+
+   &__icon {
+      cursor: pointer;
+      width: 75px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000000;
+      transition: 0.4s;
+      @media (hover: hover) {
+         &:hover {
+            scale: 1.1;
+         }
+      }
+   }
+
+   // .media-vidget__list
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      position: absolute;
+      bottom: 100%;
+      translate: 0 -12px;
+      width: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.4s;
+      li a {
+         width: 55px;
+         aspect-ratio: 1;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 50%;
+         box-shadow: 3px 3px 30px 0 rgba(59, 59, 59, 0.15);
+         transition: 0.4s;
+
+         @media (hover: hover) {
+            &:hover {
+               scale: 1.1;
+            }
+         }
+      }
+   }
+   @media (max-width: $tablet) {
+      right: 12px;
+      bottom: 12px;
+   }
+   @media (max-width: $mobile) {
+      right: 8px;
+      bottom: 8px;
+      &__list {
+         li a {
+            width: 47px;
+            img {
+               width: 50%;
+            }
+         }
+      }
+      &__icon {
+         width: 55px;
+         .open {
+            width: 60%;
+         }
+      }
+   }
+}

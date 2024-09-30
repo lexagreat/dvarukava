@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
    makeCartShutter();
    makeOrderTemplate();
+   vidgetWork();
 });
 function goBack() {
    const back = document.querySelector(".cart-content__back");
@@ -292,3 +293,12 @@ document.addEventListener("keydown", function (e) {
       popupClose(popupActive);
    }
 });
+
+function vidgetWork() {
+   const vidget = document.querySelector(".media-vidget");
+   if (!vidget) return;
+   const icon = vidget.querySelector(".media-vidget__icon");
+   icon.addEventListener("click", () => {
+      vidget.classList.toggle("open");
+   });
+}
